@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.muhammadfaishalrizqipratama0094.kaloriku.ui.screens.HomeScreen
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")
