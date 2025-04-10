@@ -6,6 +6,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -25,15 +26,15 @@ import com.muhammadfaishalrizqipratama0094.kaloriku.ui.components.NumberInputFie
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavController) {
-    var weight by remember { mutableStateOf("") }
-    var height by remember { mutableStateOf("") }
-    var age by remember { mutableStateOf("") }
-    var isMale by remember { mutableStateOf(true) }
-    var activityLevel by remember { mutableStateOf(ActivityLevel.MODERATE) }
+    var weight by rememberSaveable { mutableStateOf("") }
+    var height by rememberSaveable { mutableStateOf("") }
+    var age by rememberSaveable { mutableStateOf("") }
+    var isMale by rememberSaveable { mutableStateOf(true) }
+    var activityLevel by rememberSaveable { mutableStateOf(ActivityLevel.MODERATE) }
 
-    var weightError by remember { mutableStateOf(false) }
-    var heightError by remember { mutableStateOf(false) }
-    var ageError by remember { mutableStateOf(false) }
+    var weightError by rememberSaveable { mutableStateOf(false) }
+    var heightError by rememberSaveable { mutableStateOf(false) }
+    var ageError by rememberSaveable { mutableStateOf(false) }
 
     fun validateWeight(): Boolean {
         weightError = weight.isEmpty() ||
